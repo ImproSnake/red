@@ -1,0 +1,15 @@
+<app-grid-container>
+  <div class="content" content>
+    <app-search
+      (onFilterChanged)="filterChanged($event)"
+    ></app-search>
+
+    <app-unicorn-table
+      [columns]="columns"
+      [entries]="entries$ | async"
+      [isLoading]="isLoading"
+      [totalLength]="totalLength$ | async"
+      (onRowClicked)="openDetail($event)"
+    ></app-unicorn-table>
+  </div>
+</app-grid-container>

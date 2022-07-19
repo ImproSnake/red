@@ -1,0 +1,14 @@
+<form [formGroup]="searchForm">
+    <mat-form-field class="search-input">
+        <mat-label>Name</mat-label>
+        <input matInput [formControlName]="'name'">
+    </mat-form-field>
+    <mat-form-field class="select-input">
+        <mat-label>Category</mat-label>
+        <mat-select [formControlName]="'category'">
+            <mat-option *ngFor="let option of selOptions" [value]="option.value">
+                {{option.label}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</form>

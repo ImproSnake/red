@@ -1,0 +1,15 @@
+<h3 mat-dialog-title>Name: {{entity.name && entity.name[0] ? entity.name[0] : 'Unknown'}}</h3>
+<mat-dialog-content>
+    <div>
+        <p>Resource Typ: {{entity.resourceType || 'Unknown'}}</p>
+        <p>Id: {{entity.id || 'Unknown'}}</p>
+    </div>
+    <div *ngIf="entity.resourceType === 'Practitioner'">
+        <p>Telecom: {{entity.telecom || 'Unknown'}}</p>
+    </div>
+    <div *ngIf="entity.resourceType === 'Patient'">
+        <p>Geburtstag: {{entity.birthDate || 'Unknown'}}</p>
+        <p>Gender: {{entity.gender || 'Unknown'}}</p>
+        <p>Adresse: {{entity.address ? entity.address[0] : 'Unknown'}}</p>
+    </div>
+</mat-dialog-content>
